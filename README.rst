@@ -8,12 +8,12 @@ solve two problems in the context of a web application:
 #. you want to do something later
 #. you want to do a number of things in parallel
 
-There are many ways of approaching these problems.  For example, in python, you 
-might look at Twisted_, Celery_ and Stackless_.  
+There are many ways of approaching these problems.  For example, in python, you
+might look at Twisted_, Celery_ and Stackless_.
 
-Torque is inspired by Google App Engine's taskqueue_, which models_ tasks as 
-webhooks_.  This approach allows you to handle tasks within your normal web 
-application environment by writing request handlers, just as you would to handle 
+Torque is inspired by Google App Engine's taskqueue_, which models_ tasks as
+webhooks_.  This approach allows you to handle tasks within your normal web
+application environment by writing request handlers, just as you would to handle
 a user initiated request.
 
 To use it, you need to run:
@@ -51,7 +51,7 @@ running on port ``8889``) would be::
 
     import json
     import urllib
-    
+
     mytask = {
         'url': 'http://mywebservice.com/hooks/do/foo',
         'params': json.dumps({'foo', 'somevalue', 'baz': 99})
@@ -62,8 +62,8 @@ running on port ``8889``) would be::
 This queued a POST request to ``http://mywebservice.com/hooks/do/foo`` with
 the params ``foo=somevalue`` and ``baz=99`` to be made as soon as possible.
 
-You can do something similar using any programming language that can make url 
-requests.  However, if you are using python, it's much simpler to use the client 
+You can do something similar using any programming language that can make url
+requests.  However, if you are using python, it's much simpler to use the client
 api that Torque provides::
 
     from torque.client import add_task
@@ -73,7 +73,7 @@ Note that this doesn't require json encoding the params.  For all the client api
 options, see ``torque.client.Task.__doc__``.
 
 Individual tasks backoff exponentially if they error, upto a maximum backoff delay
-that's configurable as ``--max_task_delay``, until they error ``--max_task_errors`` 
+that's configurable as ``--max_task_delay``, until they error ``--max_task_errors``
 times (at which point they get deleted).
 
 
@@ -108,7 +108,7 @@ If you want to run the tests, use::
     .......
     ----------------------------------------------------------------------
     Ran 7 tests in 22.627s
-    
+
     OK
 
 Start the default task queue running ad infinitum::
@@ -125,7 +125,7 @@ Or to process the default queue once until empty you might use::
     ./bin/torque-process --finish_on_empty=true --max_task_errors=3
 
 Or to do exactly the same from python code::
-    
+
     from torque.processor import QueueProcessor
     QueueProcessor(max_task_errors=3).process(finish_on_empty=true)
 
