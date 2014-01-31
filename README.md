@@ -1,4 +1,3 @@
-
 # Torque - web hook task queue
 
 [Torque][] is a [task](http://www.celeryproject.org)
@@ -20,16 +19,14 @@ response = requests.post(endpoint, data=data, params=params)
 ```
 
 Torque is free, open source software [released into the public domain][] with
-no license restrictions. It is packaged for deployment as a [Chef cookbook][],
-for development [using Vagrant][] and is provided as a hosted service by
-[nTorque.com][].
+no license restrictions. It is packaged for deployment as a [Chef cookbook][] and 
+for development [using Vagrant][].
 
 [Torque]: http://documentup.com/thruflo/torque
 [web hooks]: http://timothyfitz.com/2009/02/09/what-webhooks-are-and-why-you-should-care/
 [released into the public domain]: http://unlicense.org/UNLICENSE
 [Chef cookbook]: https://github.com/thruflo/torque-cookbook 
 [using Vagrant]: https://github.com/thruflo/torque-vagrant
-[nTorque.com]: http://www.ntorque.com
 
 ## Rationale
 
