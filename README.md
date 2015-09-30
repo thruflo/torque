@@ -299,7 +299,7 @@ Returns a JSON data dict with status information about a task.
 
 #### `POST /task/:id/push`
 
-Pushes a task onto the redis notification channel to be consumed, aquired and
+Pushes a task onto the redis notification channel to be consumed, acquired and
 performed. You should *not* normally need to use this. It's exposed as an
 optimisation for [hybrid][] integrations.
 
